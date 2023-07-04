@@ -20,7 +20,8 @@ class Pelicula extends Model
         'duracio',
         'productora',
         'ruta_imatge',
-        'ruta_video'
+        'ruta_video',
+        'id_director'
     ];
     protected $dates = [
         'deleted_at'
@@ -29,10 +30,10 @@ class Pelicula extends Model
         La relación 1-n entra las tablas peliculas y director y categorias
         se representa con este método
     */
-    public function categorias(){
-        return $this->belongsTo(Categoria::class);
+    public function categoria(){
+        return $this->hasOne(Categoria::class);
     }
-    public function directors(){
+    public function director(){
         return $this->belongsTo(Director::class);
     }
     /* 

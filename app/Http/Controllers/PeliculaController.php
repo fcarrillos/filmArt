@@ -68,6 +68,7 @@ class PeliculaController extends Controller
     {
         /* consulta con query builder, con eloquent no funciona */
         $categorias = DB::table('categorias')->get();
+        //$categorias = Categoria::all();
  
         /* Comprueba que el usuario está autenticado y es admin */
         if (Auth::check()){
