@@ -154,15 +154,7 @@ class filmController extends Controller
         return view('layout');
     }
 
-    public function buscar(Request $request){
-
-        $inputBuscar = $request->get('buscar');
-       
-        $peliculas = pelicula::where('titol', 'LIKE', "%$inputBuscar%")->get();
- 
-
-        return view('buscar')->with('peliculas',$peliculas);
-    }
+    
 
 
 }

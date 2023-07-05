@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\filmController;
+use App\Http\Controllers\FindController;
 use App\Http\Controllers\PeliculaController;
 /*
 |--------------------------------------------------------------------------
@@ -38,7 +39,7 @@ Route::get('inicio', [filmController::class,'inicio'])->name('inicio');
 
 Route::get('/', [filmController::class,'inicio']);
 
-Route::post('buscar', [filmController::class,'buscar'])->name('buscar');
+Route::post('buscar', [FindController::class,'buscar'])->name('buscar');
 
 
 
