@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+
 use App\Models\User;
 use App\Models\Pelicula;
 use App\Models\Categoria;
@@ -118,7 +118,7 @@ class filmController extends Controller
             $peliculas = Pelicula::all(); /* obtiene las películas cuyo campo deleted_at es igual a null */
             $peliculas_id = Pelicula::all()->pluck('id_categoria'); /* obtiene el id_categoria de las películas que no están borradas*/
             $categorias = DB::table('categorias')->whereIn('id',$peliculas_id)->get();
-            /* obtiene de la tabla categorías aquellas que se corresponden con las películas que están activas, es decir, que no han sufrido iun borrado lógico  */
+            /* obtiene de la tabla categorías aquellas que se corresponden con las películas que están activas, es decir, que no han sufrido un borrado lógico  */
 
             return view('categorias')->with('peliculas',$peliculas)
                                  ->with('categorias',$categorias);

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 use App\Models\Categoria;
 use App\Models\Director;
+use App\Models\User;
 
 class Pelicula extends Model
 {
@@ -19,8 +20,12 @@ class Pelicula extends Model
         'descripcio',
         'duracio',
         'productora',
-        'ruta_imatge',
+        'ruta_imatge1',
+        'ruta_imatge2',
+        'ruta_imatge3',
         'ruta_video',
+        'id_users',
+        'id_categoria',
         'id_director'
     ];
     protected $dates = [
@@ -36,6 +41,7 @@ class Pelicula extends Model
     public function director(){
         return $this->belongsTo(Director::class);
     }
+   
     /* 
         La relación 1-n entra las tablas peliculas y users
         se representa con este método, una pelicula puede tener
