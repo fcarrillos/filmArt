@@ -5,6 +5,7 @@ use App\Http\Controllers\filmController;
 use App\Http\Controllers\PeliculaController;
 use App\Http\Controllers\FindController;
 use App\Http\Controllers\ListarPeliculasController;
+use App\Http\Controllers\CategoriasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,7 +30,7 @@ Route::get('reproducirPelicula/{id}', [filmController::class,'reproducirPelicula
 
 Route::get('listarPeliculas', [ListarPeliculasController::class,'listarPeliculas'])->name('listarPeliculas');
 
-Route::get('categorias/{categoria?}', [filmController::class,'vistaCategorias'])->name('categorias');
+Route::get('categorias/{categoria?}', [CategoriasController::class,'vistaCategorias'])->name('categorias');
 
 
 Route::resource('peliculas','App\Http\Controllers\PeliculaController')->middleware(['auth']);
