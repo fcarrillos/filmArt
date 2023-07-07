@@ -9,8 +9,8 @@
   <select class="text-white bg-dark form-select @error('categoria') is-invalid @enderror" aria-label="Default select example" name="categoria" id="categoria" value="">
     <option selected>Filtrar por Categoría</option>
     
-    @foreach ($categorias as $cat)
-      <option value="{{$cat->id}}" >{{$cat->nom}}</option>  
+    @foreach ($categorias as $categoria)
+      <option value="{{$categoria->id}}" >{{$categoria->nom}}</option>  
     @endforeach
     
   </select>
