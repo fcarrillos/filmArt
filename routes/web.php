@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\filmController;
 use App\Http\Controllers\FindController;
 use App\Http\Controllers\PeliculaController;
+use App\Http\Controllers\ListarPeliculasController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,7 +27,7 @@ Route::get('verPelicula/{id}', [filmController::class,'verPelicula'])->name('ver
 
 Route::get('reproducirPelicula/{id}', [filmController::class,'reproducirPelicula'])->name('reproducirPelicula');
 
-Route::get('listarPeliculas', [filmController::class,'listarPeliculas'])->name('listarPeliculas');
+Route::get('listarPeliculas', [ListarPeliculasController::class,'listarPeliculas'])->name('listarPeliculas');
 
 Route::get('categorias/{categoria?}', [filmController::class,'vistaCategorias'])->name('categorias');
 
