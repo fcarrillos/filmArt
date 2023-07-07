@@ -330,8 +330,8 @@ class PeliculaController extends Controller
      */
     public function destroy($id)
     {
-        //Pelicula::find($id)->delete();
-        Pelicula::find($id)->forceDelete(); /* Borra definitivamente el registro en la BBDD */
+        Pelicula::find($id)->delete();
+        //Pelicula::find($id)->forceDelete(); /* Borra definitivamente el registro en la BBDD */
 
         return redirect()->route('peliculas.index');
     }

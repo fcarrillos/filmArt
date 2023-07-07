@@ -17,15 +17,17 @@ class filmController extends Controller
 
 
     public function inicio(){
-        /* Obtiene 3 id's de la tabla peliculas para mostrarlas en el slider de la página de incio*/
+        /* Obtiene 3 id's de la tabla peliculas para mostrarlas en el slider de la página de inicio*/
         //$peliculaSlider = DB::table('peliculas')->pluck('id')->take(3);
-        $peliculaSlider = Pelicula::all()->pluck('id')->take(3);
-       
-        $pelicula0 = DB::table('peliculas')->where('id',$peliculaSlider[0])->first();
+        //$peliculaSlider = Pelicula::all()->pluck('id')->take(3);
+        $peliculaSlider = Pelicula::pluck('id')->take(3);
+        //dd($peliculaSlider);
+        //$pelicula0 = DB::table('peliculas')->where('id',$peliculaSlider[0])->first();
+        $pelicula0 = Pelicula::where('id',$peliculaSlider[0])->first();
 
-        $pelicula1 = DB::table('peliculas')->where('id',$peliculaSlider[1])->first();
+        $pelicula1 = Pelicula::where('id',$peliculaSlider[1])->first();
 
-        $pelicula2 = DB::table('peliculas')->where('id',$peliculaSlider[2])->first();
+        $pelicula2 = Pelicula::where('id',$peliculaSlider[2])->first();
 
         $peliculas = pelicula::all();
         //$peliculas = DB::table('peliculas')->get();
