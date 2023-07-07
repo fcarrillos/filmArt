@@ -35,6 +35,7 @@ Route::get('listarPeliculas', [ListarPeliculasController::class,'listarPeliculas
 Route::get('categorias/{categoria?}', [CategoriasController::class,'vistaCategorias'])->name('categorias');
 
 
+
 Route::resource('peliculas','App\Http\Controllers\PeliculaController')->middleware(['auth']);
 
 // Route::get('/', function () {

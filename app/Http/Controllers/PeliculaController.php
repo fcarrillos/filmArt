@@ -42,13 +42,13 @@ class PeliculaController extends Controller
                 $peliculas = $peliculasAll;
                 
                 return view('pelicula.index')->with('peliculas',$peliculas)
-                ->with('directors',$directors);/* panelAdmin */
+                ->with('directors',$directors);/* panelEdicion */
 
             }elseif(auth()->user()->is_editor==true){
                 
                 //dd($peliculas);
                 return view('pelicula.index')->with('peliculas',$peliculas)
-                ->with('directors',$directors);/* panelAdmin */
+                ->with('directors',$directors);/* panelEdicion */
 
             }else{
                 return view('usersGuest');
@@ -342,56 +342,3 @@ class PeliculaController extends Controller
 
 
 
-// public function index()
-//     {
-//         //$peliculas = Pelicula::all();
-//         $userCheckedId = auth()->user()->id;
-//         //dd($userCheckedId);
-//         $peliculas = Pelicula::where('id_users',$userCheckedId)->get();
-//         //dd($peliculas);
-//         if (Auth::check()){
-//             $userChecked = auth()->user()->name;
-//             $userEditor = user::where('is_editor',1)
-//             ->where('name',$userChecked);
-//             if($userEditor){
-                
-//                 return view('pelicula.index')->with('peliculas',$peliculas);/* panelAdmin */
-//             }else{
-//                 return view('usersGuest');
-//             }  
-//         }else{
-//             return redirect('usersGuest');
-//         }
-        
-//     }
-
-// public function create()
-//     {
-//         /* consulta con query builder, con eloquent no funciona */
-//         $categorias = DB::table('categorias')->get();
- 
-//         /* Comprueba que el usuario está autenticado y es admin */
-//         if (Auth::check()){
-//             $userChecked = auth()->user()->name;
-//             $userEditor = user::where('is_editor',1)
-//             ->where('name',$userChecked);
-//             if($userEditor){
-//                 return view('pelicula.create')->with('categorias',$categorias);
-                
-//             }else{
-//                 return view('usersGuest');
-//             }  
-//         }else{
-//             return redirect('usersGuest');
-//         }
-//     }
-
-// $consulta = DB::table('directors')->where('nom',(auth()->user()->name))->first();
-//         //dd(!$consulta);
-//         if (!$consulta){ 
-//             //dd('dentro ');
-//             $director = new Director();
-//             $director->nom = auth()->user()->name;
-            
-//             $director->save();
-//         }

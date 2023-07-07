@@ -78,24 +78,6 @@ class filmController extends Controller
         return view('contacta');
     }
 
-    public function panelAdmin(){
-        /* si el usuari està logat i és admin pot accedir */
-        if (Auth::check()){
-            $userChecked = auth()->user()->name;
-            $userAdmin = user::where('is_admin',1)
-            ->where('name',$userChecked);
-            if($userAdmin){
-                return view('panelAdmin');
-            }else{
-                return view('inicio');
-            }  
-        }else{
-            return redirect('inicio');
-        }
-    }    
-
-    
-    
     
     public function vistaBootstrap()
     {
