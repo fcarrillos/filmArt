@@ -60,23 +60,7 @@ class filmController extends Controller
         
     }
 
-    public function reproducirPelicula(Request $request){
-
-       
-        $id_pelicula = $request->id;
-        //$pelicula = Pelicula::where('id',$id_pelicula)->first();
-        $pelicula = DB::table('peliculas')->where('id',$id_pelicula)->first();
-        //dd($pelicula);
-        if (Auth::check()) {
-            
-            return view('reproducirPelicula')->with('pelicula',$pelicula);
-           
-        }else{
-            return redirect('usersGuest');
-        }
-        
-    }
-
+    
 
     public function usersGuest(){
         
