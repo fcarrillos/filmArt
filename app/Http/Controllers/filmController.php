@@ -42,8 +42,10 @@ class filmController extends Controller
 
        
         $id_pelicula = $request->id;
-        $pelicula = DB::table('peliculas')->where('id',$id_pelicula)->first();
-        $id_director = $pelicula->id_director;
+        //$pelicula = DB::table('peliculas')->where('id',$id_pelicula)->first();
+        $pelicula = Pelicula::where('id',$id_pelicula)->first();
+
+        $id_director = $pelicula->director_id;
         //dd($id_director);
         $director = DB::table('directors')->where('id',$id_director)->first();
         //dd($director);

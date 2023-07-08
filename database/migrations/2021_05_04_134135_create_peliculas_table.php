@@ -15,12 +15,12 @@ class CreatePeliculasTable extends Migration
     {
         Schema::create('peliculas', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('id_director')->unsigned();
-            $table->bigInteger('id_categoria')->unsigned();
+            $table->bigInteger('director_id')->unsigned();
+            $table->bigInteger('categoria_id')->unsigned();
             $table->timestamps();
 
-            $table->foreign('id_director')->reference('id')->on('directors');
-            $table->foreign('id_categoria')->reference('id')->on('categorias');
+            $table->foreign('director_id')->reference('id')->on('directors');
+            $table->foreign('categoria_id')->reference('id')->on('categorias');
 
         });
     }

@@ -17,7 +17,7 @@ class CategoriasController extends Controller
             // $peliculas = DB::table('peliculas')->get();
             
             $peliculas = Pelicula::all(); /* obtiene las películas cuyo campo deleted_at es igual a null */
-            $peliculas_id = Pelicula::pluck('id_categoria'); /* obtiene el id_categoria de las películas que no están borradas*/
+            $peliculas_id = Pelicula::pluck('categoria_id'); /* obtiene el id_categoria de las películas que no están borradas*/
             $categorias = DB::table('categorias')->whereIn('id',$peliculas_id)->get();
             //$categorias = Categoria::whereIn('id',$peliculas_id)->get();
             /* obtiene de la tabla categorías aquellas que se corresponden con las películas que están activas, es decir, que no han sufrido un borrado lógico  */
@@ -25,10 +25,10 @@ class CategoriasController extends Controller
             return view('categorias')->with('peliculas',$peliculas)
                                  ->with('categorias',$categorias);
         }else{
-            $peliculas = Pelicula::where('id_categoria',$categoria)->get();
+            $peliculas = Pelicula::where('categoria_id',$categoria)->get();
             if ($peliculas){
                
-                $peliculas_id = Pelicula::all()->pluck('id_categoria');
+                $peliculas_id = Pelicula::all()->pluck('categoria_id');
                 $categorias = DB::table('categorias')->whereIn('id',$peliculas_id)->get();
                 return view('categorias')->with('peliculas',$peliculas)
                                         ->with('categorias',$categorias);
