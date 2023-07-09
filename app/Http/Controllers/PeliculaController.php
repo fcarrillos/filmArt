@@ -28,7 +28,7 @@ class PeliculaController extends Controller
         //dd($director);
         $userCheckedId = auth()->user()->id;
         //dd($userCheckedId);
-        $peliculas = Pelicula::where('id_users',$userCheckedId)->get();
+        $peliculas = Pelicula::where('user_id',$userCheckedId)->get();
         //dd($peliculas);
         if (Auth::check()){
             $userChecked = auth()->user()->name;

@@ -39,7 +39,6 @@ class filmController extends Controller
     }
 
     public function verPelicula(Request $request){
-
        
         $id_pelicula = $request->id;
         //$pelicula = DB::table('peliculas')->where('id',$id_pelicula)->first();
@@ -48,6 +47,7 @@ class filmController extends Controller
         $id_director = $pelicula->director_id;
         //dd($id_director);
         $director = DB::table('directors')->where('id',$id_director)->first();
+        
         //dd($director);
         $director = $director->nom;
         //dd($director);
