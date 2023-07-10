@@ -6,7 +6,7 @@ use App\Http\Controllers\PeliculaController;
 use App\Http\Controllers\FindController;
 use App\Http\Controllers\ListarPeliculasController;
 use App\Http\Controllers\ReproducirPeliculaController;
-
+use App\Http\Controllers\InfoPeliculaController;
 use App\Http\Controllers\CategoriasController;
 
 /*
@@ -26,7 +26,7 @@ Route::get('sobreNosotros', [filmController::class,'sobreNosotros'])->name('sobr
 
 Route::get('contacta', [filmController::class,'contacta'])->name('contacta');
 
-Route::get('verPelicula/{id}', [filmController::class,'verPelicula'])->name('verPelicula');
+Route::get('infoPelicula/{id}', [InfoPeliculaController::class,'infoPelicula'])->name('infoPelicula');
 
 Route::get('reproducirPelicula/{id}', [ReproducirPeliculaController::class,'reproducirPelicula'])->name('reproducirPelicula');
 

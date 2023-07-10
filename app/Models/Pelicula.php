@@ -24,9 +24,9 @@ class Pelicula extends Model
         'ruta_imatge2',
         'ruta_imatge3',
         'ruta_video',
-        'id_users',
-        'id_categoria',
-        'id_director'
+        'user_id',
+        'categoria_id',
+        'director_id'
     ];
     protected $dates = [
         'deleted_at'

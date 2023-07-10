@@ -10,7 +10,7 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <a href="{{route('verPelicula',$pelicula0->id)}}" class="stretched-link"></a>
+        <a href="{{route('infoPelicula',$pelicula0->id)}}" class="stretched-link"></a>
         <img src="{{'fotos/'.$pelicula0->ruta_imatge1}}" class="rounded d-block w-100" alt="..."> 
         
         <div class="carousel-caption d-none d-md-block"> 
@@ -20,7 +20,7 @@
         
       </div>
       <div class="carousel-item">
-        <a href="{{route('verPelicula',$pelicula1->id)}}" class="stretched-link"></a>
+        <a href="{{route('infoPelicula',$pelicula1->id)}}" class="stretched-link"></a>
         <img src="{{'fotos/'.$pelicula1->ruta_imatge1}}" class="rounded d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block">
           <h5>{{-- Second slide label --}}</h5>
@@ -28,7 +28,7 @@
         </div>
       </div>
       <div class="carousel-item">
-        <a href="{{route('verPelicula',$pelicula2->id)}}" class="stretched-link"></a>
+        <a href="{{route('infoPelicula',$pelicula2->id)}}" class="stretched-link"></a>
         <img src="{{'fotos/'.$pelicula2->ruta_imatge1}}" class="rounded d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block">
           <h5>{{-- Third slide label --}}</h5>
@@ -57,7 +57,7 @@
     <div class="card bg-dark">
       
         <div class="card-body efectoHover">
-          <a href="{{route('verPelicula',$pelicula->id)}}" class="stretched-link">
+          <a href="{{route('infoPelicula',$pelicula->id)}}" class="stretched-link">
           <img class="img-fluid rounded" src="{{'/fotos/'.$pelicula->ruta_imatge1}}" alt="" srcset="">  
           <div class="descripcion">{{ \Str::limit($pelicula->descripcio, 75) }}</div>
           <span class="badge colorBadgeTitol text-white lead fs-6 mt-2">{{$pelicula->titol}}</span>
