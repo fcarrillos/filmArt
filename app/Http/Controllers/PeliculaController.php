@@ -148,10 +148,10 @@ class PeliculaController extends Controller
             $director->nom = $request->get('director');      
             $director->save();
 
-            $peliculas->id_director = $director->id;
+            $peliculas->director_id = $director->id;
             
         }else{
-            $peliculas->id_director = $consulta->id;
+            $peliculas->director_id = $consulta->id;
         }
         
         //$peliculas = new Pelicula();
@@ -163,8 +163,8 @@ class PeliculaController extends Controller
         $peliculas->ruta_imatge2 = $img2;
         $peliculas->ruta_imatge3 = $img3;
         $peliculas->ruta_video = $vdo;
-        $peliculas->id_users = auth()->user()->id;
-        $peliculas->id_categoria = $request->get('categoria');
+        $peliculas->user_id = auth()->user()->id;
+        $peliculas->categoria_id = $request->get('categoria');
         //$peliculas->id_director = $director->id;
 
         $peliculas->save();
@@ -196,10 +196,10 @@ class PeliculaController extends Controller
         
         $peliculas = Pelicula::where('id',$id)->first();
         
-        $categoria_id = $peliculas->id_categoria;
+        $categoria_id = $peliculas->categoria_id;
         $categoria = DB::table('categorias')->where('id',$categoria_id)->first();
         //dd($categoria->nom);
-        $director_id = $peliculas->id_director;
+        $director_id = $peliculas->director_id;
         $director = DB::table('directors')->where('id',$director_id)->first();
         //dd($director->nom);
         return view('pelicula.edit',compact('peliculas'))
@@ -298,10 +298,10 @@ class PeliculaController extends Controller
             $director = new Director();
             $director->nom = $request->get('director');      
             $director->save();
-            $cambio->id_director = $director->id;
+            $cambio->director_id = $director->id;
             
         }else{
-            $cambio->id_director = $consulta->id;
+            $cambio->director_id = $consulta->id;
         }
         
 
@@ -311,8 +311,8 @@ class PeliculaController extends Controller
         $cambio->productora = $request->get('productora');
         //$cambio->id_users = auth()->user()->id;
         /* no modifica el valor de id_users, respetando así al usuario que dió de alta la película, aunque el Admin la modifique posteriormente */
-        $cambio->id_categoria = $request->get('categoria');
-        //$cambio->id_director = $director->id;
+        $cambio->categoria_id = $request->get('categoria');
+        //$cambio->director_id = $director->id;
 
         $cambio->save();
         

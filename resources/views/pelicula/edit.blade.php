@@ -42,7 +42,7 @@
         
         @foreach ($categorias as $cat)
 
-        <option value="{{ $cat->id }}" {{(old('categoria') == $cat->id) ? "selected" : (($peliculas->id_categoria == $cat->id)?"selected":"")}} >{{ $cat->nom}}</option>  
+        <option value="{{ $cat->id }}" {{(old('categoria') == $cat->id) ? "selected" : (($peliculas->categoria_id == $cat->id)?"selected":"")}} >{{ $cat->nom}}</option>  
 
         @endforeach
         
