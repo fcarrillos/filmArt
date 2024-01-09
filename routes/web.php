@@ -9,6 +9,7 @@ use App\Http\Controllers\ReproducirPeliculaController;
 use App\Http\Controllers\InfoPeliculaController;
 use App\Http\Controllers\CategoriasController;
 
+use App\Http\Livewire\Peliculas;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,7 +35,8 @@ Route::get('listarPeliculas', [ListarPeliculasController::class,'listarPeliculas
 
 Route::get('categorias/{categoria?}', [CategoriasController::class,'vistaCategorias'])->name('categorias');
 
-
+/* livewire route component Peliculas */
+Route::get('/pelicula', Peliculas::class)->name('pelicula');
 
 Route::resource('peliculas','App\Http\Controllers\PeliculaController')->middleware(['auth']);
 

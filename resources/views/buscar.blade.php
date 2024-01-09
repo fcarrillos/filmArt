@@ -8,7 +8,7 @@
     <div class="col-sm-6 col-md-4 col-lg-3">
       <div class="card bg-dark">
         <div class="card-body efectoHover">
-          <a href="{{route('verPelicula',$pelicula->id)}}" class="stretched-link">
+          <a href="{{route('infoPelicula',$pelicula->id)}}" class="stretched-link">
             <img class="img-fluid rounded" src="{{'/fotos/'.$pelicula->ruta_imatge2}}" alt="" srcset="">  
             <div class="descripcion">{{ \Str::limit($pelicula->descripcio, 75) }}</div>
             <span class="badge colorBadgeTitol text-white lead fs-6 mt-2">{{$pelicula->titol}}</span>

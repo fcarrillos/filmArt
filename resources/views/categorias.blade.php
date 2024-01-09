@@ -1,10 +1,10 @@
 @extends('layouts.layout')
 
 @section('content')
-
+ 
 <div class="row">
   <div class="col-md-4 text-white lead mb-3 ps-5 fs-2 pt-4 font-weight-bold">Filtrar por Categorías</div>
-
+  
 <div class="col-md-4 offset-md-4 mb-1 ps-5 fs-2 pt-4">  
   <select class="text-white bg-dark form-select @error('categoria') is-invalid @enderror" aria-label="Default select example" name="categoria" id="categoria" value="">
     <option selected>Filtrar por Categoría</option>
